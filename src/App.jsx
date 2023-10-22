@@ -4,7 +4,8 @@ import conf from './conf/conf';
 import './App.css'
 
 function App() {
- 
+ console.log(import.meta.env.VITE_APPWRITE_DATABASE_ID);
+ console.log(conf.appwriteDatabaseId);
 
   return (
     <>
