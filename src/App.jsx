@@ -1,20 +1,41 @@
 import { useState } from 'react'
 import conf from './conf/conf';
-
-import './App.css'
+import { useDispatch } from 'react-redux';
+import authService from './appwrite/auth';
+import { login,logout } from './store/authSlice';
+import { footer,header } from './components';
+import { useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 
 function App() {
- console.log(import.meta.env.VITE_APPWRITE_DATABASE_ID);
- console.log(conf.appwriteDatabaseId);
+  const [loading,setLoading]=useState(false)
+  const dispatch= useDispatch()
 
-  return (
-    <>
-      <h1>
-        sd
-      </h1>
-     
-    </>
-  )
+  useEffect(() => {
+  authService.getCurrentUser().then((useData)=>{
+    if(useData){
+      dispatch(login({useData}))
+    }
+    else{
+      dispatch(logout())
+    }
+  }).finally(()=>setLoading(false))
+  }, [])
+  
+ 
+  return !loading ? (
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+      <div className='w-full block'>
+        
+        {/* <header />
+        <main>
+        TODO:  <Outlet />
+        </main> */}
+        <footer />
+      </div>
+    </div>
+  ) : null
 }
+
 
 export default App
