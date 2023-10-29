@@ -3,7 +3,7 @@ import conf from './conf/conf';
 import { useDispatch } from 'react-redux';
 import authService from './appwrite/auth';
 import { login,logout } from './store/authSlice';
-import { footer,header } from './components';
+import { Footer,Header} from './components/index';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -27,11 +27,9 @@ function App() {
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
       <div className='w-full block'>
         
-        <header />
-        <main>
-        TODO:  <Outlet />
-        </main>
-        <footer />
+        <Header />
+        bk
+        <Footer />
       </div>
     </div>
   ) : null
