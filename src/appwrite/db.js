@@ -2,15 +2,7 @@ import conf from "../conf/conf";
 import { Client,Databases,ID,Storage, Query} from "appwrite";
 
 
-constructor
-createPost
-updatePost
-deletePost
-getPost
-getPosts
-uploadFile
-deleteFile
-getFilePreview
+
 
 export class Serive{
     client=new Client()
