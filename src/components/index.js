@@ -1,6 +1,6 @@
 // import Footer from "./footer/Footer";
 // import Header from "./header/Header";
-import Logo from "./logo";
+import Logo from "./Logo";
 import Button from "./Button";
 import Input from "./Input";
 import Container from "./container/Container";
