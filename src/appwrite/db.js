@@ -4,7 +4,7 @@ import { Client,Databases,ID,Storage, Query} from "appwrite";
 
 
 
-export class Serive{
+export class AppwriteService{
     client=new Client()
     databases;
     bucket;
@@ -23,11 +23,11 @@ export class Serive{
                 conf.appwriteCollectionId,
                 slug,
 
-                {title, content, featuredImage, status, userId} 
+                {title, content, featuredImage, status, userId}   
             )
             
         } catch (error) {
-            console.log("Appwrite serive :: create post :: error",error);
+            console.log("Appwrite appwriteService :: create post :: error",error);
             
         }
 
@@ -49,7 +49,7 @@ export class Serive{
                 }
             )
         } catch (error) {
-            console.log("Appwrite serive :: updatePost :: error", error);
+            console.log("Appwrite appwriteService :: updatePost :: error", error);
         }
     }
 
@@ -63,7 +63,7 @@ export class Serive{
             )
             return true
         } catch (error) {
-            console.log("Appwrite serive :: deletePost :: error", error);
+            console.log("Appwrite appwriteService :: deletePost :: error", error);
             return false
         }
     }
@@ -77,7 +77,7 @@ export class Serive{
             
             )
         } catch (error) {
-            console.log("Appwrite serive :: getPost :: error", error);
+            console.log("Appwrite appwriteService :: getPost :: error", error);
             return false
         }
     }
@@ -92,7 +92,7 @@ export class Serive{
 
             )
         } catch (error) {
-            console.log("Appwrite serive :: getPosts :: error", error);
+            console.log("Appwrite appwriteService :: getPosts :: error", error);
             return false
         }
     }
@@ -107,7 +107,7 @@ export class Serive{
                 file
             )
         } catch (error) {
-            console.log("Appwrite serive :: uploadFile :: error", error);
+            console.log("Appwrite appwriteService :: uploadFile :: error", error);
             return false
         }
     }
@@ -120,7 +120,7 @@ export class Serive{
             )
             return true
         } catch (error) {
-            console.log("Appwrite serive :: deleteFile :: error", error);
+            console.log("Appwrite appwriteService :: deleteFile :: error", error);
             return false
         }
     }
@@ -134,5 +134,5 @@ export class Serive{
 
 }
 
-const serive= new Serive()
-export default serive;
+const appwriteService= new AppwriteService()
+export default appwriteService;
